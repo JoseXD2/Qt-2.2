@@ -82,6 +82,12 @@ class MusicBeatState extends FlxUIState
 		androidControls.cameras = [camControls];
 		androidControls.visible = false;
 		add(androidControls);
+		
+		_pad = new FlxVirtualPad(NONE, A);
+		_pad.alpha = 0.75;
+		_pad.visible = false;
+		_pad.cameras = [camControls];
+		add(_pad);
 	}
 
 	public function removeAndroidControls()
