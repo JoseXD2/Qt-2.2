@@ -117,7 +117,7 @@ class MusicBeatState extends FlxUIState
 	
 	}
 
-	public function removeAndroidControls()
+	private function removeAndroidControls()
 	{
 		if (trackedinputsNOTES != [])
 			controls.removeFlxInput(trackedinputsNOTES);
