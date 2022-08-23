@@ -5908,7 +5908,7 @@ class PlayState extends MusicBeatState
 
 			//Fuck you, I added a taunt button because it's funny! -Haz
 			//FlxG.keys.justPressed.SHIFT
-			if(!inhumanSong && FlxG.keys.anyJustPressed(tauntKey) && #if android || _pad.buttonA.justPressed #end !bfDodging && #if !android !controlHoldArray.contains(true) && #end !boyfriend.animation.curAnim.name.endsWith('miss') && boyfriend.specialAnim == false){
+			if(FlxG.keys.anyJustPressed(tauntKey) #if android || _virtualpad.buttonB.justPressed #end && !bfDodging && #if !android !controlHoldArray.contains(true) && #end !boyfriend.animation.curAnim.name.endsWith('miss') && boyfriend.specialAnim == false){
 				boyfriend.playAnim('hey', true);
 				boyfriend.specialAnim = true;
 				boyfriend.heyTimer = 0.59;
