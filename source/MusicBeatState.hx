@@ -117,7 +117,7 @@ class MusicBeatState extends FlxUIState
 	
 	}
 
-	private function removeAndroidControls()
+	public function removeAndroidControls()
 	{
 		if (trackedinputsNOTES != [])
 			controls.removeFlxInput(trackedinputsNOTES);
@@ -126,7 +126,7 @@ class MusicBeatState extends FlxUIState
 			remove(androidControls);
 	}
 
-	private function addPadCamera()
+	public function addPadCamera()
 	{
 		if (virtualPad != null)
 		{
