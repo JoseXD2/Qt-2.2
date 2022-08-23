@@ -35,7 +35,10 @@ class MusicBeatState extends FlxUIState
 	#if android
 	var virtualPad:FlxVirtualPad;
 	var androidControls:AndroidControls;
-	var _pad:FlxVirtualPad;
+	_virtualpad = new FlxVirtualPad(DPad, Action);
+	_virtualpad.alpha = 0.75;
+	add(_virtualpad);
+	controls.setVirtualPadUI(_virtualpad, DPad, Action);
 	var trackedinputsUI:Array<FlxActionInput> = [];
 	var trackedinputsNOTES:Array<FlxActionInput> = [];
 
@@ -84,11 +87,25 @@ class MusicBeatState extends FlxUIState
 		androidControls.visible = false;
 		add(androidControls);
 		
-		_pad = new FlxVirtualPad(NONE, A);
-		_pad.alpha = 0.75;
-		_pad.visible = false;
-		_pad.cameras = [camControls];
-		add(_pad);
+		if (PlayState.SONG.dodgeEnabled)
+                {
+                        _virtualpad = new FlxVirtualPad(NONE, A_B);
+		        _virtualpad.alpha = 0.75;
+                        _virtualpad.cameras = [camcontrol];
+                        _virtualpad.visible = false;
+		        add(_virtualpad);
+                }
+                else if (!PlayState.inhumanSong)
+                {
+                        _virtualpad = new FlxVirtualPad(NONE, B);
+		        _virtualpad.alpha = 0.75;
+                        _virtualpad.cameras = [camcontrol];
+                        _virtualpad.visible = false;
+		        add(_virtualpad);
+                }
+		#end
+	}
+	
 	}
 
 	public function removeAndroidControls()
