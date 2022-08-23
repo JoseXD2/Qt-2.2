@@ -79,6 +79,7 @@ class MusicBeatSubstate extends FlxSubState
 		}
 		#end
 	}
+		
 	override function update(elapsed:Float)
 	{
 		//everyStep();
