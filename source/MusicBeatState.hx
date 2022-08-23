@@ -136,7 +136,7 @@ class MusicBeatState extends FlxUIState
 			virtualPad.cameras = [camControls];
 		}
 	}
-	#end
+	
 
 	override function destroy()
 	{
