@@ -1758,9 +1758,9 @@ class FunkinLua {
 			}
 		});
 
-
+                #if desktop 
 		Discord.DiscordClient.addLuaCallbacks(lua);
-
+                #end
 		call('onCreate', []);
 		#end
 	}
