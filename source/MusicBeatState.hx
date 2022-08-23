@@ -126,7 +126,7 @@ class MusicBeatState extends FlxUIState
 			remove(androidControls);
 	}
 
-	public function addPadCamera()
+	private function addPadCamera()
 	{
 		if (virtualPad != null)
 		{
